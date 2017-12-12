@@ -89,5 +89,9 @@ function renderStoreRows(){
   }
 }
 
-makeHeaderRow()
-renderStoreRows()
+makeHeaderRow();
+allStores[0].render();
+allStores[1].render();
+allStores[2].render();
+allStores[3].render();
+allStores[4].render();
