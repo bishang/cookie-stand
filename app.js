@@ -9,7 +9,7 @@ var firstPike = {
   avgCookieSale: 6.3,
   cookiesPerHour: [],
   custPerHour: function(minCust, maxCust) {
-    return Math.random() * (this.maxCust - this.minCust) + this.minCust;
+    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   },
   cookiesPurchased: function() {
     return this.custPerHour() * this.avgCookieSale}
@@ -18,6 +18,25 @@ var firstPike = {
 for(var i = 0; i < hours.length; i++) {
   firstPike.cookiesPerHour.push(firstPike.cookiesPurchased());
 }
+
+function makeHTML() {
+  var container = document.createElement('div');
+  container.innerHTML = '<h2>' + firstPike.location + '</h2>';
+  document.body.appendChild(container);
+
+  var list = document.createElement('ul');
+  var listArr = []
+
+  for (var i = 0; i < firstPike.cookiesPerHour.length; i++) {
+    listArr.push('<li>' + firstPike.cookiesPerHour[i] + '</li>');
+  }
+
+  var fullList = listArr.join('');
+  list.innerHTML = fullList;
+  document.body.appendChild(list);
+}
+
+makeHTML()
 
 var seatacAirport = {
   location: 'SeaTac Airport',
