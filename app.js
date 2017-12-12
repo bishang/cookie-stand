@@ -28,7 +28,7 @@ function makeHTML() {
   var listArr = []
 
   for (var i = 0; i < firstPike.cookiesPerHour.length; i++) {
-    listArr.push('<li>' + firstPike.cookiesPerHour[i] + '</li>');
+    listArr.push('<li>'+ hours[i] + ' cookies: ' + firstPike.cookiesPerHour[i] + '</li>');
   }
 
   var fullList = listArr.join('');
