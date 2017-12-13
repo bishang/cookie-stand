@@ -101,6 +101,15 @@ function renderFooterRow(){
   thEl.textContent = 'Total Hourly Sales';
   trEl.appendChild(thEl);
 
+  for(var i = 0; i < hours.length; i++){
+    for(var j = 0; j < allStores.length; j++){
+
+    }
+    thEl = document.createElement('th');
+    thEl.textContent = 'testo';
+    trEl.appendChild(thEl);
+  }
+
   storeTable.appendChild(trEl);
 };
 
