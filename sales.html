@@ -8,9 +8,36 @@
 </head>
 
 <body>
-  <h1>Pat's Salmon Cookies</h1>
 
-  <table id="stores"></table>
+  <section class="sales_page">
+    <h1>Pat's Salmon Cookies</h1>
+
+    <form id="store_form">
+        <fieldset>
+          <label for="name">Store Name:</label>
+          <input type="text" name="name" placeholder="Enter New Store" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="min">Minimum Customers Per Hour:</lable>
+          <input type="number" name="min" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="max">Maximum Customers Per Hour:</lable>
+          <input type="number" name="max" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="avg">Average Cookies Per Sale:</lable>
+          <input type="number" name="avg" required>
+        </fieldset>
+
+        <button type="submit" id="submit_button">Submit</button>
+      </form>
+
+    <table id="store_table"></table>
+  </section>
 
   <script src="app.js"></script>
 </body>
