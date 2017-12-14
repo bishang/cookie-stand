@@ -4,7 +4,8 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 var hourTotals = [];
 var allStores =[];
 
-var storeTable = document.getElementById('stores');
+var form = document.getElementById('store_form');
+var storeTable = document.getElementById('store_table');
 var trEl = document.createElement('tr');
 var thEl = document.createElement('th');
 var tdEl = document.createElement('td');
@@ -62,6 +63,19 @@ Store.prototype.render = function(){
   trEl.appendChild(tdEl);
 
   storeTable.appendChild(trEl); // ends table row
+};
+
+function formData(event) {
+  event.preventDefault();
+
+  var name = event.target.name.value;
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var avg = event.target.avg.value;
+
+  data.push(new Store(name, min, max, avg));
+  renderStoreRows();
+  form.reset();
 };
 
 function random(min, max) {
@@ -122,6 +136,7 @@ function renderFooterRow(){
   storeTable.appendChild(trEl);
 };
 
+form.addEventListener('submit', formData);
 renderHeaderRow();
 renderStoreRows();
 calcHourlyTotals();

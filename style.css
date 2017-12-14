@@ -66,6 +66,34 @@ footer ul {
 	display: inline-block;
 }
 
+input[type="text"], input[type="number"] {
+  border: solid 1px #000;
+  padding: 8px 8px;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  padding: 5px;
+	background-color: #CCE3FF;
+}
+
 .store-name {
 	font-weight: bold;
+}
+
+.sales_page {
+	width: 960px;
+	margin: 0 auto;
 }
