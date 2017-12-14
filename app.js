@@ -1,7 +1,7 @@
 'use strict';
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
+var hourTotals = [];
 var allStores =[];
 
 var storeTable = document.getElementById('stores');
@@ -68,6 +68,17 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // via MDN docs
 }
 
+function calcHourlyTotals() {
+  for(var i = 0; i < hours.length; i++){
+    var totalHourlySales = 0;
+    // for(var j = 0; j < allStores.length; j++){
+    //   totalHourlySales += allStores[j].cookiesEachHour[j];
+    // };
+    hourTotals.push(totalHourlySales);
+  };
+};
+
+
 function renderHeaderRow() {
   trEl = document.createElement('tr');
 
@@ -102,11 +113,9 @@ function renderFooterRow(){
   trEl.appendChild(thEl);
 
   for(var i = 0; i < hours.length; i++){
-    for(var j = 0; j < allStores.length; j++){
 
-    }
     thEl = document.createElement('th');
-    thEl.textContent = 'testo';
+    thEl.textContent = hourTotals[i];
     trEl.appendChild(thEl);
   }
 
@@ -115,4 +124,5 @@ function renderFooterRow(){
 
 renderHeaderRow();
 renderStoreRows();
+calcHourlyTotals();
 renderFooterRow();
