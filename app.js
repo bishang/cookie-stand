@@ -69,14 +69,15 @@ function formData(event) {
   event.preventDefault();
 
   var name = event.target.name.value;
-  var min = event.target.min.value;
-  var max = event.target.max.value;
-  var avg = event.target.avg.value;
+  var min = parseInt(event.target.min.value);
+  var max = parseInt(event.target.max.value);
+  var avg = parseInt(event.target.avg.value);
 
-  data.push(new Store(name, min, max, avg));
-  renderStoreRows();
+  allStores.push(new Store(name, min, max, avg));
+  // renderStoreRows();
   form.reset();
 };
+form.addEventListener('submit', formData);
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // via MDN docs
@@ -136,7 +137,6 @@ function renderFooterRow(){
   storeTable.appendChild(trEl);
 };
 
-form.addEventListener('submit', formData);
 renderHeaderRow();
 renderStoreRows();
 calcHourlyTotals();
