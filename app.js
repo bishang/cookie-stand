@@ -73,8 +73,8 @@ function formData(event) {
   var max = parseInt(event.target.max.value);
   var avg = parseInt(event.target.avg.value);
 
-  allStores.push(new Store(name, min, max, avg));
-  // renderStoreRows();
+  new Store(name, min, max, avg);
+  renderStoreRows();
   form.reset();
 };
 form.addEventListener('submit', formData);
@@ -83,15 +83,15 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // via MDN docs
 }
 
-function calcHourlyTotals() {
-  for(var i = 0; i < hours.length; i++){
-    var totalHourlySales = 0;
-    // for(var j = 0; j < allStores.length; j++){
-    //   totalHourlySales += allStores[j].cookiesEachHour[j];
-    // };
-    hourTotals.push(totalHourlySales);
-  };
-};
+// function calcHourlyTotals() {
+//   for(var i = 0; i < hours.length; i++){
+//     var totalHourlySales = 0;
+//     for(var j = 0; j < allStores.length; j++){
+//       totalHourlySales += allStores[j].cookiesEachHour[j];
+//     };
+//     hourTotals.push(totalHourlySales);
+//   };
+// };
 
 
 function renderHeaderRow() {
@@ -140,4 +140,4 @@ function renderFooterRow(){
 renderHeaderRow();
 renderStoreRows();
 calcHourlyTotals();
-renderFooterRow();
+// renderFooterRow();
